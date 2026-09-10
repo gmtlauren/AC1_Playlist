@@ -1,0 +1,7 @@
+<h1>Controle de Estoque</h1>
+
+<div *ngFor="let produto of produtos">
+  {{ produto.nome }} - Quantidade: {{ produto.quantidade }} - R$ {{ produto.preco }}
+</div>
+
+<p>Valor total: R$ {{ getTotal() }}</p>

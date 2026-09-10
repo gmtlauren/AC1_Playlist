@@ -1,0 +1,25 @@
+<h1>Login</h1>
+
+<input
+  type="email"
+  [(ngModel)]="email"
+  placeholder="Email">
+
+<br><br>
+
+<input
+  type="password"
+  [(ngModel)]="senha"
+  placeholder="Senha">
+
+<br><br>
+
+<button
+  (click)="login()"
+  [disabled]="!emailValido() || !senhaValida()">
+  Login
+</button>
+
+<p *ngIf="logado">
+  Bem-vindo, {{ email }}!
+</p>

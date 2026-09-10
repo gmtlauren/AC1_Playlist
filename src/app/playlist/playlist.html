@@ -1,0 +1,90 @@
+<h1>Seja bem-vindo ao SpotiPobre 😁🤖</h1>
+
+<div class="playlist">
+
+  <h2>Minha Playlist</h2>
+
+  <div class="input-grupo">
+
+    <input
+      type="text"
+      [(ngModel)]="novaMusica"
+      placeholder="Nome da nova música..."
+    />
+
+    <!-- Exibir um botão “Adicionar" -->
+    <button
+      [disabled]="!novaMusica.trim()"
+      (click)="adicionarMusica()">
+      Adicionar
+    </button>
+
+  </div>
+
+
+  <!-- Exibir as músicas utilizando @for -->
+  <ul class="lista-musicas">
+
+    @for (musica of musicas; track musica) {
+
+      <!-- Permitir selecionar uma música ao clicar sobre ela -->
+      <li
+        (click)="selecionarMusica(musica)"
+        [class.ativo]="musica === musicaSelecionada">
+
+        {{ musica }}
+
+      </li>
+
+    }
+
+  </ul>
+
+
+  <div class="painel-controle" [class.tocando-ativo]="tocando">
+
+    <!-- Utilizar @if para mostrar a música selecionada -->
+    <!-- Exibir uma mensagem quando nenhuma música estiver selecionada -->
+
+    @if (musicaSelecionada) {
+
+      <div class="detalhes-musica">
+
+        <p>
+          <strong>Tocando agora:</strong>
+          {{ musicaSelecionada }}
+        </p>
+
+
+        <!-- Criar um botão que alterne entre “Reproduzir” e “Pausar” -->
+        <button (click)="alternarReproducao()">
+
+          {{ tocando ? 'Pausar' : 'Reproduzir' }}
+
+        </button>
+
+
+        <div class="curtidas-secao">
+
+          <!-- Criar um botão para aumentar o número de curtidas -->
+          <button (click)="curtir()">
+            Curtir ❤️
+          </button>
+
+          <span>{{ curtidas }} curtidas</span>
+
+        </div>
+
+      </div>
+
+    } @else {
+
+      <p class="aviso">
+        Nenhuma música selecionada no momento.
+      </p>
+
+    }
+
+  </div>
+
+</div>

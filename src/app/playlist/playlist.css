@@ -1,0 +1,41 @@
+/*Aplicar CSS próprio, deixando a interface clara e organizada.
+Já peço perdão pelo CSS curto, fizemos o que lembrávamos*/
+
+.playlist {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: #a38d00;
+  color: #000000;
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+h1, h2, h3 {
+  text-align: center;
+  color: #000000;
+}
+
+.btn-play {
+  background-color: #002089;
+  color: rgb(93, 0, 255);
+}
+
+.btn-play:hover {
+  background-color: #218838;
+}
+
+.btn-like {
+  background-color: #ff4757;
+  color: white;
+}
+
+.btn-like:hover {
+  background-color: #ff6b81;
+}
+
+.mensagem-vazia {
+  color: #aaa;
+  font-style: italic;
+}

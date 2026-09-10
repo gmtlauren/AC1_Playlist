@@ -1,0 +1,35 @@
+<h1>Quiz</h1>
+
+<div *ngIf="!finalizado">
+
+  <h2>{{ perguntas[indice].pergunta }}</h2>
+
+  <button (click)="responder(0)">
+    {{ perguntas[indice].opcoes[0] }}
+  </button>
+
+  <button (click)="responder(1)">
+    {{ perguntas[indice].opcoes[1] }}
+  </button>
+
+  <button (click)="responder(2)">
+    {{ perguntas[indice].opcoes[2] }}
+  </button>
+
+  <button (click)="responder(3)">
+    {{ perguntas[indice].opcoes[3] }}
+  </button>
+
+  <p *ngIf="respondido">
+    {{ mensagem }}
+  </p>
+
+  <button *ngIf="respondido" (click)="proximaPergunta()">
+    Próxima
+  </button>
+
+</div>
+
+<h2 *ngIf="finalizado">
+  Pontuação: {{ pontos }} de 5
+</h2>

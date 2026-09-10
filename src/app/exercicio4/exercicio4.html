@@ -1,0 +1,28 @@
+<h1>Lista de Alunos</h1>
+
+<input [(ngModel)]="novoAluno" placeholder="Nome do aluno">
+<button (click)="adicionar()">Adicionar</button>
+
+<hr>
+
+<div *ngFor="let aluno of alunos; let i = index">
+
+  <input *ngIf="editando === i" [(ngModel)]="aluno.nome">
+
+  <span *ngIf="editando !== i">
+    {{ aluno.nome }}
+  </span>
+
+  <button *ngIf="editando !== i" (click)="editar(i)">
+    Editar
+  </button>
+
+  <button *ngIf="editando === i" (click)="salvar()">
+    Salvar
+  </button>
+
+  <button (click)="remover(i)">
+    Remover
+  </button>
+
+</div>
